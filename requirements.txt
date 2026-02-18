@@ -4,4 +4,3 @@ python-dotenv
 requests
 pydantic 
 huggingface_hub
-sentence-transformers
