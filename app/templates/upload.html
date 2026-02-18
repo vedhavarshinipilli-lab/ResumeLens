@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Upload</title>
+</head>
+<body>
+    <h2>Upload Resume</h2>
+
+    <form action="/resume/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+
+    <textarea name="job_description" placeholder="Job Description"></textarea>
+
+    <input type="text" name="target_role" placeholder="Target Role" />
+
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>

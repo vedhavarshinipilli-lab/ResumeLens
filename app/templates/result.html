@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+        }
+        .card {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: auto;
+        }
+        h1 {
+            color: #ffd700;
+        }
+        ul {
+            list-style: square;
+        }
+        .tag {
+            display: inline-block;
+            background: #ffd700;
+            color: black;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 20px;
+        }
+        .preview {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>📄 Resume Analysis</h1>
+
+    <p><strong>Name:</strong> {{ result.name }}</p>
+    <p><strong>Email:</strong> {{ result.email }}</p>
+    <p><strong>Phone:</strong> {{ result.phone }}</p>
+
+    <h3>🛠 Skills</h3>
+    {% for skill in result.normalized_skills %}
+        <span class="tag">{{ skill }}</span>
+    {% endfor %}
+
+    <h3>📊 Stats</h3>
+    <p>Total Characters: {{ result.characters }}</p>
+
+    <h3>👀 Preview</h3>
+    <div class="preview">
+        {{ result.preview }}
+    </div>
+</div>
+
+</body>
+</html>
