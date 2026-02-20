@@ -56,11 +56,17 @@ export default function Home() {
         resume_text = extracted;
       }
 
-      const response = await fetch("http://127.0.0.1:8000/predict/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume_text, job_description: jobDescription }),
-      });
+      const response = await fetch(
+        "http://reumelens-backend-p5s5.onrender.com/predict/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            resume_text,
+            job_description: jobDescription,
+          }),
+        },
+      );
 
       if (!response.ok) {
         const errBody = await response.json().catch(() => null);
@@ -94,11 +100,17 @@ export default function Home() {
       const extracted = await getResumeTextFromFile(selectedFile);
       if (extracted && extracted.trim().length > 30) resume_text = extracted;
 
-      const response = await fetch("http://127.0.0.1:8000/predict/download", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume_text, job_description: jobDescription }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/predict/`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            resume_text,
+            job_description: jobDescription,
+          }),
+        },
+      );
 
       if (!response.ok) throw new Error("Failed to generate PDF on server.");
 
