@@ -1,245 +1,256 @@
-/* ---------- General Page ---------- */
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  background: #000000;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
-  color: #00ff99;
-}
+/* ===== Global ===== */
 
-/* ---------- Card Container ---------- */
-.card {
-  background: #0a0a0a;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
-  padding: 30px;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- Titles ---------- */
+body {
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top left, #0f172a, #020617 70%);
+  color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* ===== Layout ===== */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Typography ===== */
+
 .title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ff4500;
-  margin-bottom: 5px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: #00ff99;
-  margin-bottom: 25px;
+  margin-top: 8px;
+  color: #94a3b8;
+  margin-bottom: 30px;
 }
 
-/* ---------- Sections ---------- */
+/* ===== Sections ===== */
+
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .label {
-  font-weight: 600;
   display: block;
-  margin-bottom: 8px;
-  color: #00ff99;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #e2e8f0;
 }
 
-/* ---------- File Input ---------- */
+/* ===== Inputs ===== */
+
 .file-input {
-  display: block;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #004d33;
-  background: #0a0a0a;
-  color: #00ff99;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
 }
 
 .file-name {
   margin-top: 8px;
-  font-style: italic;
-  color: #00ffff;
+  font-size: 0.9rem;
+  color: #38bdf8;
 }
 
-/* ---------- Textarea ---------- */
 textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #004d33;
-  font-size: 1rem;
+  min-height: 260px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
   resize: vertical;
-  background: #0a0a0a;
-  color: #00ff99;
+  font-size: 1rem;
 }
 
-/* ---------- Buttons ---------- */
-button {
-  cursor: pointer;
+textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* ===== Buttons ===== */
+
+.analyze-btn,
+.download-btn,
+.secondary-btn,
+.ghost-btn {
+  padding: 14px 22px;
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
-  padding: 12px 20px;
   font-weight: 600;
-  font-size: 1rem;
+  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .analyze-btn {
-  background: linear-gradient(135deg, #00ff99, #00cccc);
-  color: #000000;
   width: 100%;
-  margin-top: 15px;
-  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #38bdf8);
+  color: white;
+  font-size: 1.1rem;
 }
 
 .analyze-btn:hover {
-  filter: brightness(1.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
 }
 
 .download-btn {
-  background: linear-gradient(135deg, #00ff99, #00cccc);
-  color: #000000;
-  font-size: 1.1rem;
-  padding: 14px 25px;
-  border-radius: 12px;
-  margin-top: 20px;
-  font-weight: 700;
-}
-
-.download-btn:hover {
-  filter: brightness(1.2);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
 }
 
 .secondary-btn {
-  background: #003300;
-  color: #00ff99;
-  margin-left: 15px;
-  padding: 12px 20px;
-}
-
-/* ---------- Result Screen ---------- */
-.result-screen .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
 }
 
 .ghost-btn {
-  background: none;
-  color: #00ff99;
-  font-weight: 600;
-  font-size: 1rem;
-  border: 1px solid #00ff99;
-  padding: 6px 12px;
-  border-radius: 8px;
+  background: transparent;
+  color: #38bdf8;
 }
 
-/* ---------- Match Score ---------- */
+/* ===== Result Screen ===== */
+
+.result-screen {
+  padding: 50px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+/* ===== Report Grid ===== */
+
+.report-grid {
+  display: grid;
+  gap: 40px;
+}
+
 .score-card {
-  flex: 1 1 100%;
-  background: #003300; /* darker green box */
-  color: #00ff99;
-  border-radius: 16px;
-  padding: 25px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 20px;
+  padding: 40px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
-}
-
-.score-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #00ff99;
 }
 
 .score-value {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 5px;
+  color: #38bdf8;
 }
 
 .score-label {
-  font-size: 1.4rem;
-  font-weight: 700;
+  margin-top: 10px;
+  color: #94a3b8;
 }
 
 .level-badge {
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 12px;
-  background: rgba(0, 255, 153, 0.2);
+  margin-top: 15px;
   display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #334155;
+  font-size: 0.9rem;
 }
 
-/* ---------- Lists (Matched / Missing Skills) ---------- */
-.lists {
-  flex: 1 1 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+/* ===== Lists ===== */
 
 .list-block {
-  flex: 1 1 45%;
-  background: #002200; /* dark green */
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
 }
 
 .list-block h4 {
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: #00ff99; /* teal heading */
+  margin-bottom: 12px;
 }
 
-/* Box around all skills */
-.skills-list {
-  background: #003300; /* slightly darker green */
-  padding: 12px;
-  border-radius: 12px;
+.chips {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-/* Individual skill chips */
 .chip {
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  background: #004d33; /* darker accent */
-  color: #00ff99;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 
-/* ---------- Improvement Suggestions ---------- */
+.chip.good {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+
+.chip.bad {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.empty-note {
+  color: #94a3b8;
+}
+
+/* ===== Suggestions ===== */
+
 .suggestions {
-  list-style: disc;
   padding-left: 20px;
+  line-height: 1.6;
 }
 
-.suggestions li {
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  background: #331a00; /* orangish dark elegant */
-  border-radius: 8px;
-  color: #ff7f50; /* soft orange highlight */
+/* ===== Actions ===== */
+
+.result-actions {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .lists {
-    flex-direction: column;
+/* ===== Desktop ===== */
+
+@media (min-width: 768px) {
+  .report-grid {
+    grid-template-columns: 300px 1fr;
   }
 
-  .list-block {
-    flex: 1 1 100%;
+  .result-actions {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 3rem;
   }
 }
