@@ -1,21 +1,25 @@
+from app.services.skill_data import SKILL_ALIASES
+
+
 def normalize_skills(skills: list[str]) -> list[str]:
     """
-    Normalize skill names for consistent comparison.
+    Normalize skill names for consistent comparison using alias mapping.
     """
-
-    normalization_map = {
-        "python": "python",
-        "fastapi": "fastapi",
-        "git": "git",
-        "sql": "sql",
-        "postgresql": "sql",
-        "mysql": "sql",
-    }
 
     normalized = set()
 
     for skill in skills:
-        key = skill.strip().lower()
-        normalized.add(normalization_map.get(key, key))
+        skill_lower = skill.strip().lower()
+
+        matched = False
+
+        for canonical, aliases in SKILL_ALIASES.items():
+            if skill_lower in aliases:
+                normalized.add(canonical)
+                matched = True
+                break
+
+        if not matched:
+            normalized.add(skill_lower)
 
     return list(normalized)
