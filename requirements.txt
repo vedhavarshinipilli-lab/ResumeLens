@@ -2,3 +2,4 @@ uvicorn
 fastapi
 reportlab
 python-multipart
+python-dotenv
