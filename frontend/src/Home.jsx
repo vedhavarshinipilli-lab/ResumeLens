@@ -57,7 +57,7 @@ export default function Home() {
       }
 
       const response = await fetch(
-        "http://reumelens-backend-p5s5.onrender.com/predict/",
+        `${import.meta.env.VITE_BACKEND_URL}/predict/`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -101,7 +101,7 @@ export default function Home() {
       if (extracted && extracted.trim().length > 30) resume_text = extracted;
 
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/predict/`,
+        `${import.meta.env.VITE_BACKEND_URL}/predict/`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
