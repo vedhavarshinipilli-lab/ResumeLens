@@ -1,6 +1,4 @@
 uvicorn
 fastapi
-python-dotenv
-requests
-pydantic 
-huggingface_hub
+reportlab
+python-multipart
